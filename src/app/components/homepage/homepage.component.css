@@ -1,0 +1,64 @@
+h1 {
+    position: relative;
+    top: -5px;
+    color: aliceblue;
+}
+
+label {
+    margin-left: -50px;
+}
+
+input {
+    position: relative;
+    top: -30px;
+    right: -65px;
+}
+
+.homepage {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 600px;
+    height: 550px;
+    background-color: #ff6700;
+}
+
+.form {
+    margin-left: 50px;
+}
+
+.book {
+    border: none;
+    background-color: #004e98;
+    color: aliceblue;
+    width: 100px;
+    position: relative;
+    top: -30px;
+    right: -110px;
+}
+
+.reset {
+    border: none;
+    background-color: #004e98;
+    color: aliceblue;
+    width: 100px;
+    position: relative;
+    top: -20px;
+    right: -110px;
+}
+
+button:hover {
+    background-color: #3a6ea5;
+}
+
+.form-group {
+    color: aliceblue
+}
+
+.amount {
+    position: relative;
+    top: -62px;
+    right: -280px;
+}
