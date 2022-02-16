@@ -23,7 +23,7 @@ export class Reservation {
 export class CrudService {
 
   // Node/Express API
-  REST_API: string = 'http://localhost:8000/api';
+  REST_API: string = 'http://localhost:9999/api';
 
   // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -41,7 +41,7 @@ export class CrudService {
 
   // Get all objects
   getReservations() {
-    return this.httpClient.get(`${this.REST_API}/reservation`);
+    return this.httpClient.get(`${this.REST_API}/reservations`);
   }
 
   // Get single object

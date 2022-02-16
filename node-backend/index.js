@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 // PORT
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 9999
 
 // Connect PORT
 app.listen(port, () => {
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 });
 
 // API Root
-app.use('/api/reservation', reservationRoute);
+app.use('/api', reservationRoute);
 
 // 404 Handler
 app.use((req, res, next) => {

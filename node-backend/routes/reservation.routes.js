@@ -16,7 +16,7 @@ reservationRoute.route('/homepage').post((req, res, next) => {
 })
 
 // Get all reservation
-reservationRoute.route('/').get((req, res) => {
+reservationRoute.route('/reservations').get((req, res, next) => {
     Reservation.find((error, data) => {
         if (error) {
             return next(error);
@@ -27,7 +27,7 @@ reservationRoute.route('/').get((req, res) => {
 })
 
 // Get reservation
-reservationRoute.route('/:id').get((req, res) => {
+reservationRoute.route('/reservations/:id').get((req, res, next) => {
     Reservation.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);
