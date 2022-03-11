@@ -2,7 +2,7 @@
     <h1>จองตั๋วรถตู้</h1>
     <div class="nav">
         <div class="form">
-            <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="reservationForm">
                 <div class="form-group">
                     <label for="vanline">สายรถตู้</label>
                     <input type="text" class="form-control" formControlName="vanline" required>
@@ -29,10 +29,10 @@
                     <div class="amount">คน</div>
                 </div>
                 <div>
-                    <button class="book" type="submit">จอง</button>
+                    <button class="book" (click)="onSubmit()">จอง</button>
                 </div>
                 <div>
-                    <button class="reset" >ล้างข้อมูล</button>
+                    <button class="reset" (click)="onResetForm()">ล้างข้อมูล</button>
                 </div>
             </form>
         </div>

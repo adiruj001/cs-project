@@ -1,0 +1,49 @@
+h1 {
+    font-size: 300%;
+}
+
+.signup {
+    position: absolute;
+    top: 150px;
+    left: 600px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 600px;
+    height: 620px;
+    background-color: #ff6700;
+    color: white;
+}
+
+input {
+    margin: auto;
+    margin-top: -7px;
+    width: 40%;
+}
+
+label {
+    margin-left: 30%;
+    margin-top: 15px;
+}
+
+.text-alert {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    font-size: 15px;
+    color: black;
+    margin-top: -5%;
+    margin-left: 72%;
+}
+
+.signup-button {
+    border: none;
+    background-color: #004e98;
+    color: aliceblue;
+    width: 100px;
+    margin-top: 4%;
+    margin-left: 42%;
+}
+
+button:disabled {
+    opacity: 70%;
+}

@@ -1,13 +1,15 @@
 <nav class="nav">
     <a class="logo">VanB</a>
+    <h1 *ngIf="UserNowLogin.member_username != null">สวัสดี {{UserNowLogin.member_firstname}}</h1>
     <div>
         <ul class="nav" >
-            <li class="homepage">
+            <div class="homepage">
                 <a routerLinkActive="active" routerLink="/homepage">หน้าแรก</a>
-            </li>   
-            <li class="login">
+            </div> 
+            <div *ngIf="UserNowLogin.member_username == null" class="login">
                 <a routerLinkActive="active" routerLink="/login-page">สมัครสมาชิก/เข้าสู้ระบบ</a>
-            </li> 
+            </div> 
+            <button *ngIf="UserNowLogin.member_username != null" class="logout-button" (click)="logout()">ออกจากระบบ</button>
         </ul>
     </div>
 </nav>

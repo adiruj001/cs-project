@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { ConfirmPageComponent } from './components/confirm-page/confirm-page.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomepageComponent,
     LoginPageComponent,
-    ConfirmPageComponent
+    ConfirmPageComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

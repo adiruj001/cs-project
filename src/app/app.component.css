@@ -1,11 +1,20 @@
 nav {
+    position: sticky;
     background-color: #004e98;
     height: 100px;
+    width: 1920px;
 }
 
-li, a {
-    font-weight: 500;
-    font-size: 25px;
+h1 {
+    position: absolute;
+    font-size: 200%;
+    color: whitesmoke;
+    top: 50px;
+    left: 175px;
+}
+
+a {
+    font-size: 150%;
     color: whitesmoke;
     text-decoration: none;
 }
@@ -23,12 +32,23 @@ li {
     background-color: #3a6ea5;
 }
 
-.login {
-    margin-top: 5px;
-    margin-left: 950px;
+.homepage {
+    position: absolute;
+    top: 60px;
+    left: 600px;
 }
 
-.homepage {
-    margin-top: 58px;
-    margin-left: 500px;
+.login {
+    position: absolute;
+    top: 15px;
+    left: 1660px;
+}
+
+.logout-button {
+    border: none;
+    color: aliceblue;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    left: 1800px;
 }

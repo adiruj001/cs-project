@@ -16,8 +16,10 @@ mongoose.connect(mongoDB.db, {
     console.log('Database error: ' + error)
 })
 
-// Connect to MongoDB
 const reservationRoute = require('./routes/reservation.routes')
+const memberRoute = require('./routes/member.routes')
+
+// Connect to MongoDB
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -43,6 +45,7 @@ app.get('/', (req, res) => {
 
 // API Root
 app.use('/api', reservationRoute);
+app.use('/api', memberRoute);
 
 // 404 Handler
 app.use((req, res, next) => {

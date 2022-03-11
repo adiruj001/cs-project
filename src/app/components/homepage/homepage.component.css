@@ -1,5 +1,7 @@
 h1 {
     position: relative;
+    font-size: 300%;
+    left: 25%;
     top: -5px;
     color: aliceblue;
 }
@@ -18,15 +20,16 @@ input {
     position: relative;
     top: 50px;
     left: 50px;
-    padding-top: 10px;
-    padding-left: 10px;
-    width: 600px;
-    height: 550px;
+    padding-top: 20px;
+    padding-left: 80px;
+    width: 550px;
+    height: 570px;
     background-color: #ff6700;
 }
 
 .form {
     margin-left: 50px;
+    padding-top: 5%;
 }
 
 .book {

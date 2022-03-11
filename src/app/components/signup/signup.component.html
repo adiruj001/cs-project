@@ -1,0 +1,53 @@
+<div class="signup">
+    <h1 class="text-center">สร้างบัญชี</h1>
+    <div class="form">
+        <form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+            <div class="">
+              <label for="member_firstname" class="form-label">ชื่อ</label>
+              <input type="text" class="form-control" formControlName="member_firstname" required>
+              <div *ngIf="memberForm.get('member_firstname')?.invalid && memberForm.get('member_firstname')?.touched" class="text-alert">โปรดระบุชื่อ</div>
+            </div>
+            <div class="">
+              <label for="member_lastname" class="form-label">นามสกุล</label>
+              <input type="text" class="form-control" formControlName="member_lastname" required>
+              <div *ngIf="memberForm.get('member_lastname')?.invalid && memberForm.get('member_lastname')?.touched" class="text-alert">โปรดระบุนามสกุล</div>
+            </div>
+            <div class="">
+                <label for="member_tel" class="form-label">เบอร์โทรศัพท์</label>
+                <input type="text" class="form-control" formControlName="member_tel" required>
+                <div *ngIf="memberForm.get('member_tel')?.hasError('required') && memberForm.get('member_tel')?.invalid && memberForm.get('member_tel')?.touched" class="text-alert">
+                    โปรดระบุเบอร์โทรศัพท์
+                </div>
+                <div *ngIf="memberForm.get('member_tel')?.hasError('pattern') && memberForm.get('member_tel')?.invalid && memberForm.get('member_tel')?.touched" class="text-alert">
+                    เบอร์โทรศัพท์ไม่ถูกต้อง
+                </div>
+            </div>
+            <div class="">
+                <label for="member_username" class="form-label">ชื่อผู้ใช้</label>
+                <input type="text" class="form-control" formControlName="member_username" required>
+                <div *ngIf="memberForm.get('member_username')?.hasError('required') && memberForm.get('member_username')?.invalid && memberForm.get('member_username')?.touched" class="text-alert">โปรดระบุชื่อผู้ใช้</div>
+            </div>
+            <div class="">
+                <label for="member_password" class="form-label">รหัสผ่าน</label>
+                <input type="password" id="password" class="form-control" formControlName="member_password" required>
+                <div *ngIf="memberForm.get('member_password')?.invalid && memberForm.get('member_password')?.touched" class="text-alert">โปรดระบุรหัสผ่าน</div>
+            </div>
+            <div class="">
+                <label for="confirm_password" class="form-label">ยืนยันรหัสผ่าน</label>
+                <input type="password" id="confirm-password" class="form-control" formControlName="confirm_password" required>
+                <div *ngIf="memberForm.get('confirm_password')?.hasError('required') && memberForm.get('confirm_password')?.invalid && memberForm.get('confirm_password')?.touched" class="text-alert">
+                    โปรดยืนยันรหัสผ่าน
+                </div>
+                <div *ngIf="memberForm.get('confirm_password')?.hasError('checkPassword')" class="text-alert">
+                    รหัสผ่านไม่ตรงกัน
+                </div>
+                <div *ngIf="memberForm.get('confirm_password')?.valid" class="text-alert">
+                    รหัสผ่านตรงกัน
+                </div>
+            </div>
+            <div>
+                <button [disabled]="memberForm.invalid" type="submit" class="signup-button">สมัคร</button>
+            </div>
+          </form>
+    </div>
+</div>

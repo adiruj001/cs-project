@@ -1,1 +1,21 @@
-<p>login-page works!</p>
+<div class="login">
+    <h1 class="text-center">ลงชื่อเข้าใช้</h1>
+    <div class="form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3 col-md-2">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" formControlName="username" required>
+            </div>
+            <div class="mb-3 col-md-2">
+              <label for="password" class="form-label">Password</label>
+              <input type="text" class="form-control" formControlName="password" required>
+            </div>
+            <div>
+                <button type="submit" class="login-button">เข้าสู่ระบบ</button>
+            </div>
+            <div class="goto-signup">สร้างบัญชี
+                <a href="http://localhost:4200/signup-page">ที่นี่</a>
+            </div>
+          </form>
+    </div>
+</div>
