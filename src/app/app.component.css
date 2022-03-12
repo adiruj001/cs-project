@@ -1,26 +1,45 @@
 nav {
-    position: sticky;
+    /* position: sticky; */
     background-color: #004e98;
-    height: 100px;
-    width: 1920px;
+    height: 120px;
+    /* width: 1920px; */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #3A6EA5;
 }
 
 h1 {
-    position: absolute;
-    font-size: 200%;
+    /* position: absolute; */
+    /* font-size: 200%; */
     color: whitesmoke;
-    top: 50px;
-    left: 175px;
+    /* top: 50px;
+    left: 175px; */
 }
 
 a {
     font-size: 150%;
     color: whitesmoke;
     text-decoration: none;
-}
-
-li {
-    list-style: none;
 }
 
 .logo {
@@ -40,15 +59,21 @@ li {
 
 .login {
     position: absolute;
-    top: 15px;
-    left: 1660px;
+    /* top: 15px;
+    left: 1660px; */
 }
 
 .logout-button {
     border: none;
     color: aliceblue;
     background-color: red;
-    position: absolute;
-    top: 20px;
-    left: 1800px;
+    float:right;
+    /* position: absolute; */
+    /* top: 20px;
+    left: 1800px; */
 }
+
+.float-right{
+    float:right;
+}
+
