@@ -1,0 +1,117 @@
+h1 {
+    position: relative;
+    font-size: 300%;
+    width: fit-content;
+    left: 5%;
+    top: 20px;
+    color: aliceblue;
+}
+
+h2 {
+    display: block;
+    position: relative;
+    font-size: 200%;
+    width: fit-content;
+    margin-top: -750px;
+    margin-left: 690px;
+}
+
+label {
+    font-size: 180%;
+    margin-left: -50px;
+    margin-top: 10px;
+}
+
+input {
+    position: relative;
+    top: -38px;
+    right: -70px;
+    width: 300px;
+}
+
+img {
+    border: 5px #004e98;
+    border-style: solid;
+    position: relative;
+    width: 409.6px;
+    height: 640px;
+}
+
+.paid-info {
+    position: relative;
+    margin-top: -10px;
+    margin-left: 690px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.confirm-page {
+    border: 5px black;
+    border-style: solid;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    padding-top: 5px;
+    padding-left: 80px;
+    width: 600px;
+    height: 770px;
+    background-color: #ff6700;
+}
+
+.form {
+    position: relative;
+    margin-left: 50px;
+    top: 20px;
+    
+}
+
+.confirm-button {
+    border: none;
+    background-color: #07942b;
+    color: aliceblue;
+    width: 180px;
+    position: relative;
+    font-size: 130%;
+    padding: 5px;
+    top: -50px;
+    right: -720px;
+}
+
+.cancel-button {
+    border: none;
+    background-color: #ff0000;
+    color: aliceblue;
+    width: 180px;
+    position: relative;
+    font-size: 130%;
+    padding: 5px;
+    top: -50px;
+    right: -340px;
+}
+
+.form-group {
+    color: aliceblue
+}
+
+.amount {
+    position: relative;
+    font-size: 200%;
+    top: -85px;
+    left: 250px;
+    width: fit-content;
+}
+
+.price {
+    font-size: xx-large;
+    color: aliceblue;
+    position: relative;
+    margin-top: -45px;
+    top: -20px;
+    right: -75px;
+}
+
+#amountInput {
+    width: 70px;
+    left: 160px;
+    top: -39px;
+}

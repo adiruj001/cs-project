@@ -1,0 +1,26 @@
+.table-list{
+    margin-top: 20px;
+}
+
+h1{
+    font-size: 200%;
+}
+
+button{
+    margin-left: 10px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+th {
+    border: 1px black solid;
+    background-color: #ff6700;
+    color: aliceblue;
+    height: 50px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}

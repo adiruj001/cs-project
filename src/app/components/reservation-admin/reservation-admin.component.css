@@ -1,0 +1,112 @@
+.table-list{
+    margin-top: 20px;
+}
+
+h1{
+    font-size: 200%;
+}
+
+table{
+    margin-top: -270px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+th {
+    border: 1px black solid;
+    background-color: #ff6700;
+    color: aliceblue;
+    height: 50px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
+
+#label-vanline {
+    font-size: 150%;
+    position: relative;
+    top: 35px;
+    left: 100px;
+}
+
+#vanline-select {
+    position: relative;
+    width: 300px;
+    left: 190px;
+}
+
+#label-date {
+    font-size: 150%;
+    position: relative;
+    top: -40px;
+    left: 530px;
+}
+
+#date-select {
+    position: relative;
+    width: 200px;
+    top: -74px;
+    left: 590px;
+}
+
+#label-time {
+    font-size: 150%;
+    position: relative;
+    top: -115px;
+    left: 820px;
+}
+
+#time-select {
+    position: relative;
+    width: 100px;
+    top: -148px;
+    left: 880px;
+}
+
+#label-status {
+    font-size: 150%;
+    position: relative;
+    top: -190px;
+    left: 1005px;
+}
+
+#status-select {
+    position: relative;
+    width: 200px;
+    top: -222px;
+    left: 1090px;
+}
+
+#label-passenger {
+    font-size: 150%;
+    position: relative;
+    top: -264px;
+    left: 1315px;
+}
+
+#passenger-select {
+    position: relative;
+    width: 250px;
+    top: -296px;
+    left: 1410px;  
+}
+
+#search-button {
+    border: none;
+    color: aliceblue;
+    background-color: #004e98;
+    position: relative;
+    width: 100px;
+    top: -350px;
+    left: 1700px;
+}
+
+#reset-button {
+    border: none;
+    color: aliceblue;
+    background-color: gray;
+    position: relative;
+    width: 100px;
+    top: -300px;
+    left: 1600px;
+}

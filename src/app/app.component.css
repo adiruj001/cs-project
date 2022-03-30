@@ -20,6 +20,7 @@ li a {
     display: block;
     color: whitesmoke;
     text-align: center;
+    margin-top: 10px;
     padding: 14px 16px;
     text-decoration: none;
 }
@@ -29,17 +30,55 @@ li a:hover:not(.active) {
 }
 
 h1 {
-    /* position: absolute; */
-    /* font-size: 200%; */
+    position: relative;
+    font-size: 300%;
     color: whitesmoke;
-    /* top: 50px;
-    left: 175px; */
+    top: 42px;
+    /* left: 175px; */
+}
+
+h2 {
+    position: relative;
+    top: 13px;
+    left: 25px;
+    font-size: 170%;
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 a {
     font-size: 150%;
     color: whitesmoke;
     text-decoration: none;
+}
+
+#login-register:hover:not(.active) {
+    background-color: #3A6EA5;
+}
+
+#login-register{
+    position: relative;
+    top: 13px;
+    left: 20px;
+    font-size: 170%;
+    padding-top: 5px;
+    padding-right: 16px;
+    padding-left: 20px;
+    
+    z-index: 2;
+}
+
+#active-register{
+    position: relative;
+    top: 5px;
+    display: inline;
+    float: right;
+    left: 314px;
+    background-color: #3a6ea5;
+    width: 274px;
+    height: 35px;
+    z-index: 1;
 }
 
 .logo {
@@ -64,6 +103,9 @@ a {
 }
 
 .logout-button {
+    position: relative;
+    top: 16px;
+    right: 5px;
     border: none;
     color: aliceblue;
     background-color: red;

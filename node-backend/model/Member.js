@@ -17,7 +17,7 @@ let Member = new Schema({
     member_tel: {
         type: Number
     },
-    member_type: {
+    type: {
         type: String
     }
 }, {

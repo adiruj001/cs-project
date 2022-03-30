@@ -1,0 +1,30 @@
+<div class="contact">
+    <h1>ส่งข้อความถึงเรา</h1>
+    <div class="nav">
+        <div class="form">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="contact_member_name">ชื่อ-นามสกุล</label>
+                    <input type="text" class="form-control" formControlName="contact_member_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_member_email">อีเมล</label>
+                    <input type="text" class="form-control" formControlName="contact_member_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_member_tel">เบอร์โทร</label>
+                    <input type="text" class="form-control" formControlName="contact_member_tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_massage">รายละเอียด</label>
+                    <textarea id="massageId" type="text" class="form-control" formControlName="contact_massage" required></textarea>
+                </div>
+                <div>
+                    <button class="sent-text" type="submit">ส่งข้อความ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<img [src]="imageContPath" alt="">

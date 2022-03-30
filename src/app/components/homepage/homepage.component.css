@@ -1,29 +1,51 @@
 h1 {
     position: relative;
-    font-size: 300%;
-    left: 25%;
-    top: -5px;
+    font-size: 400%;
+    width: fit-content;
+    left: 18%;
+    top: 18px;
     color: aliceblue;
 }
 
 label {
     margin-left: -50px;
+    font-size: 180%;
+    margin-top: 10px;
+}
+
+select {
+    position: relative;
+    width: 300px;
+    top: -38px;
+    right: -70px;
 }
 
 input {
     position: relative;
-    top: -30px;
-    right: -65px;
+    top: -39px;
+    right: -70px;
+}
+
+img {
+    border: 10px #ff6700;
+    border-style: solid;
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-top: -650px;
+    margin-left: 700px;
 }
 
 .homepage {
+    border: 5px black;
+    border-style: solid;
     position: relative;
     top: 50px;
     left: 50px;
     padding-top: 20px;
     padding-left: 80px;
-    width: 550px;
-    height: 570px;
+    width: 600px;
+    height: 760px;
     background-color: #ff6700;
 }
 
@@ -36,20 +58,24 @@ input {
     border: none;
     background-color: #004e98;
     color: aliceblue;
-    width: 100px;
+    width: 150px;
     position: relative;
-    top: -30px;
-    right: -110px;
+    font-size: 130%;
+    padding: 10px;
+    top: -60px;
+    right: -100px;
 }
 
 .reset {
     border: none;
     background-color: #004e98;
     color: aliceblue;
-    width: 100px;
+    width: 150px;
     position: relative;
-    top: -20px;
-    right: -110px;
+    font-size: 130%;
+    padding: 10px;
+    top: -50px;
+    right: -100px;
 }
 
 button:hover {
@@ -57,11 +83,18 @@ button:hover {
 }
 
 .form-group {
-    color: aliceblue
+    color: aliceblue;
 }
 
 .amount {
     position: relative;
-    top: -62px;
-    right: -280px;
+    font-size: 200%;
+    top: -85px;
+    left: 250px;
+    width: fit-content;
+}
+
+#amountInput {
+    width: 70px;
+    left: 160px;
 }

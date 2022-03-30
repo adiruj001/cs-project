@@ -1,0 +1,48 @@
+input {
+    margin-top: -20px;
+    width: 300px;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    right: -120px;
+}
+
+textarea {
+    margin-top: 40px;
+    margin-left: -20px;
+    width: 530px;
+    height: 280px;
+}
+
+h1 {
+    position: relative;
+    font-size: 250%;
+    width: fit-content;
+    margin-left: 140px;
+    top: 30px;
+}
+
+label {
+    position: relative;
+    top: 30px;
+    margin-left: -20px;
+    font-size: 150%;
+    margin-top: 10px;
+}
+
+.form {
+    margin-left: 50px;
+    padding-top: 5%;
+}
+
+.contact {
+    border: 5px black;
+    border-style: solid;
+    position: relative;
+    color: aliceblue;
+    background-color: #ff6700;
+    width: 600px;
+    height: 760px;
+    margin-left: 700px;
+    margin-top: 50px;
+}

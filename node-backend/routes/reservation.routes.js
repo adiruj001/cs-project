@@ -1,19 +1,16 @@
 const express = require('express');
 //const app = express();
 
+const reservationController = require('../controllers/images');
+
 const reservationRoute = express.Router();
+
+const storage = require('../helpers/storage');
+
 let Reservation = require('../model/Reservation');
 
 // Add reservation
-reservationRoute.route('/homepage').post((req, res, next) => {
-    Reservation.create(req.body, (error, data) => {
-        if (error) {
-            return next(error);
-        } else {
-            res.json(data);
-        }
-    })
-})
+reservationRoute.post('/paid-page', storage, reservationController.postReservation);
 
 // Get all reservation
 reservationRoute.route('/reservations').get((req, res, next) => {
@@ -33,6 +30,21 @@ reservationRoute.route('/reservations/:id').get((req, res, next) => {
             return next(error);
         } else {
             res.json(data);
+        }
+    })
+})
+
+// Update reservation
+reservationRoute.route('/update-reservation/:id').put((req, res, next) => {
+    Reservation.findByIdAndUpdate(req.params.id, {
+        $set: req.body
+    }, (error, data) => {
+        if(error) {
+            return next(error);
+            console.log(error);
+        } else {
+            res.json(data);
+            console.log("reservation updated successfully");
         }
     })
 })

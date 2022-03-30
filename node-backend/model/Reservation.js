@@ -28,6 +28,12 @@ let Reservation = new Schema({
     },
     amount: {
         type: Number
+    },
+    imagePath: {
+        type: String
+    },
+    price: {
+        type: Number
     }
 }, {
     collection: 'reservation'

@@ -10,11 +10,17 @@ input {
 }
 
 label{
+    font-size: 150%;
     margin-left: 168%;
+    width: 200%;
 }
 
 a {
     color: #004e98;
+}
+
+button:hover {
+    background-color: #3a6ea5;
 }
 
 .form {
@@ -22,6 +28,8 @@ a {
 }
 
 .login {
+    border: 5px black;
+    border-style: solid;
     position: relative;
     top: 50px;
     left: 600px;
@@ -34,15 +42,19 @@ a {
 }
 
 .login-button {
+    position: relative;
     border: none;
     background-color: #004e98;
+    font-size: 120%;
     color: aliceblue;
-    width: 100px;
-    margin-top: -35%;
+    padding: 10px;
+    width: fit-content;
+    top: 20px;
     margin-left: 41%;
 }
 
 .goto-signup {
-    margin-top: 2%;
-    margin-left: 42%;
+    font-size: 120%;
+    margin-top: 7%;
+    margin-left: 40%;
 }

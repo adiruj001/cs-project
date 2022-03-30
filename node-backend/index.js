@@ -18,6 +18,8 @@ mongoose.connect(mongoDB.db, {
 
 const reservationRoute = require('./routes/reservation.routes')
 const memberRoute = require('./routes/member.routes')
+const adminRoute = require('./routes/admin.routes');
+const contactRoute = require('./routes/contact.routes');
 
 // Connect to MongoDB
 const app = express();
@@ -46,6 +48,10 @@ app.get('/', (req, res) => {
 // API Root
 app.use('/api', reservationRoute);
 app.use('/api', memberRoute);
+app.use('/api', adminRoute);
+app.use('/api', contactRoute);
+app.use('/images', express.static(path.join('images')));
+app.use('/pictures', express.static(path.join('pictures')));
 
 // 404 Handler
 app.use((req, res, next) => {

@@ -1,20 +1,24 @@
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams, HttpRequest } from '@angular/common/http';
+
+import { Subject } from "rxjs";
 
 // Defined type
-export class Reservation {
-  _id!: String;
-  member_id!: String;
-  passenger!: String;
-  date!: String;
-  time!: String;
-  vanline!: String;
-  pickup!: String;
-  destination!: String;
-  status!: String;
-  amount!: Number;
+export interface Reservation {
+  _id: String;
+  member_id: String;
+  passenger: String;
+  date: String;
+  time: String;
+  vanline: String;
+  pickup: String;
+  destination: String;
+  status: String;
+  amount: Number;
+  imagePath: String;
+  price: Number;
 }
 export class Member {
   _id!: String;
@@ -23,7 +27,21 @@ export class Member {
   member_firstname!: String;
   member_lastname!: String;
   member_tel!: String;
-  member_type!: String;
+  type!: String;
+}
+export class Admin {
+  _id!: String;
+  admin_username!: String;
+  admin_password!: String;
+  type!: String;
+}
+export class Contact {
+  _id!: String;
+  contact_member_id!: String;
+  contact_member_name!: String;
+  contact_member_email!: String;
+  contact_member_tel!: Number;
+  contact_massage!: String;
 }
 
 @Injectable({
@@ -37,18 +55,56 @@ export class CrudService {
   // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
+  private reservation: Reservation[] = [];
+  private reservation$ = new Subject<Reservation[]>();
+
   constructor(private httpClient: HttpClient) {}
 
   // Add
-  addReservation(data: Reservation): Observable<any> {
-    let API_URL = `${this.REST_API}/homepage`;
+  addReservation(data: Reservation, image: File): void {
+    const formData = new FormData();
+    formData.append('member_id', String(data.member_id));
+    formData.append('passenger', String(data.passenger));
+    formData.append('date', String(data.date));
+    formData.append('time', String(data.time));
+    formData.append('vanline', String(data.vanline));
+    formData.append('pickup', String(data.pickup));
+    formData.append('destination', String(data.destination));
+    formData.append('status', String(data.status));
+    formData.append('amount', String(data.amount));
+    formData.append('price', String(data.price));
+    formData.append('image', image);
+
+    let API_URL = `${this.REST_API}/paid-page`;
+    this.httpClient.post<{ reservaT: Reservation }>(API_URL, formData)
+    .subscribe((formData) => {
+      const reservation: Reservation = {
+        _id: formData.reservaT._id,
+        member_id: formData.reservaT.member_id,
+        passenger: formData.reservaT.passenger,
+        date: formData.reservaT.date,
+        time: formData.reservaT.time,
+        vanline: formData.reservaT.vanline,
+        pickup: formData.reservaT.pickup,
+        destination: formData.reservaT.destination,
+        status: formData.reservaT.status,
+        amount: formData.reservaT.amount,
+        imagePath: formData.reservaT.imagePath,
+        price: formData.reservaT.price
+      };
+      this.reservation.push(reservation);
+      this.reservation$.next(this.reservation);
+    });
+  }
+  addMember(data: Member): Observable<any> {
+    let API_URL = `${this.REST_API}/signup-page`;
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
       );
   }
-  addMember(data: Member): Observable<any> {
-    let API_URL = `${this.REST_API}/signup-page`;
+  addContect(data: Contact): Observable<any> {
+    let API_URL = `${this.REST_API}/contact-page`;
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
@@ -61,6 +117,12 @@ export class CrudService {
   }
   getMembers() {
     return this.httpClient.get(`${this.REST_API}/members`);
+  }
+  getAdmins() {
+    return this.httpClient.get(`${this.REST_API}/admins`);
+  }
+  getContacts() {
+    return this.httpClient.get(`${this.REST_API}/contacts`);
   }
 
   // Get single object
@@ -75,6 +137,24 @@ export class CrudService {
   }
   getMember(id: any): Observable<any> {
     let API_URL = `${this.REST_API}/members/${id}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+        return res || {}
+      }),
+      catchError(this.handleError)
+      );
+  }
+  getAdmin(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/admins/${id}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+        return res || {}
+      }),
+      catchError(this.handleError)
+      );
+  }
+  getContact(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/contacts/${id}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
         return res || {}
@@ -98,6 +178,13 @@ export class CrudService {
         catchError(this.handleError)
       );
   }
+  updateAdmin(id: any, data: any): Observable<any> {
+    let API_URL = `${this.REST_API}/update-admin/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
   // Delete
   deleteReservation(id: any): Observable<any> {
@@ -109,6 +196,13 @@ export class CrudService {
   }
   deleteMember(id: any): Observable<any> {
     let API_URL = `${this.REST_API}/delete-member/${id}`;
+    return this.httpClient.delete(API_URL, { headers: this.httpHeaders })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  deleteAdmin(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/delete-admin/${id}`;
     return this.httpClient.delete(API_URL, { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
@@ -128,5 +222,5 @@ export class CrudService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-
+  
 }

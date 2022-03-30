@@ -1,0 +1,43 @@
+<div class="table-list">
+    <h1 class="text-center">ตรวจสอบจำนวนการจอง</h1>
+    <div class="search-bar">
+        <form [formGroup]="searchForm">
+            <label id="label-vanline" for="vanline">สายรถตู้</label>
+            <select id="vanline-select" class="form-select" aria-label="Default select example" formControlName="vanline">
+                <option value="พฤกษา 3 - เดอะมอลล์งามวงศ์วาน">พฤกษา 3 - เดอะมอลล์งามวงศ์วาน</option>
+                <option value="พฤกษา 3 - พาต้า">พฤกษา 3 - พาต้า</option>
+            </select>
+    
+            <label id="label-date" for="date">วันที่</label>
+            <input id="date-select" type="date" class="form-control" formControlName="date">
+    
+            <label id="label-time" for="time">เวลา</label>
+            <select id="time-select" class="form-select" aria-label="Default select example" formControlName="time">
+                <option *ngFor="let time of vanTime" [value]="time">{{ time }}</option>
+            </select>
+    
+            <button id="search-button" (click)="onSearch()">ค้นหา</button>
+            <button id="reset-button" (click)="onResetSearch()">ล้างข้อมูล</button>
+        </form>
+    </div>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th scope="col">ลำดับ</th>
+                <th scope="col">สายรถตู้</th>
+                <th scope="col">วันที่ขึ้นรถ</th>
+                <th scope="col">เวลาที่ขึ้นรถ</th>
+                <th scope="col">จำนวนผู้โดยสาร</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of AllReservations; let i = index">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ reservation.vanline }}</td>
+                <td>{{ reservation.date }}</td>
+                <td>{{ reservation.time }}</td>
+                <td>{{ allAmount }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

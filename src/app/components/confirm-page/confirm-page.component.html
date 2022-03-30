@@ -1,1 +1,46 @@
-<p>confirm-page works!</p>
+<div class="confirm-page">
+    <h1>จองตั๋วรถตู้</h1>
+    <div class="nav">
+        <div class="form">
+            <form [formGroup]="reservationForm">
+                <div class="form-group">
+                    <label for="vanline">สายรถตู้</label>
+                    <input Disabled type="text" class="form-control" formControlName="vanline" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickup">จุดขึ้นรถ</label>
+                    <input Disabled type="text" class="form-control" formControlName="pickup" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">จุดลงรถ</label>
+                    <input Disabled type="text" class="form-control" formControlName="destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">วันที่</label>
+                    <input Disabled type="text" class="form-control" formControlName="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">เวลา</label>
+                    <input Disabled type="text" class="form-control" formControlName="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">จำนวนผู้โดยสาร</label>
+                    <input Disabled id="amountInput" type="text" class="form-control" formControlName="amount" required>
+                    <div class="amount">คน</div>
+                </div>
+                <div class="price">{{ price }}</div>
+                <div>
+                    <button class="pay-button" (click)="onSubmit()">ชำระเงิน</button>
+                </div>
+                <div>
+                    <button class="backToHome-button" (click)="onBack()">ทำรายการใหม่</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<h2>ช่องทางการชำระเงิน</h2>
+<div class="paid-info">
+    <img [src]="imagePayPath" alt="">
+</div>

@@ -1,0 +1,20 @@
+<form class="imageForm" [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <div>
+        <h3>ส่งหลักฐานยืนยันการชำระเงิน</h3>
+        <label for="imageFile" class="input-file">อัพโหลด</label>
+        <label id="file-name">กรุณาเลือกรูปภาพ</label>
+        <input type="file" id="imageFile"  class="form-control" (change)="onFileSelect($event)">
+        <div *ngIf="imageData">
+            <img [src]="imageData">
+        </div>
+        <div *ngIf="imageData">
+            <button type="submit" class="submit-button">ยืนยัน</button>
+        </div>
+    </div>
+</form>
+
+<h2>ช่องทางการชำระเงิน</h2>
+<div class="paid-info">
+    <img [src]="imagePayPath" id="pay-image">
+    <div class="price">{{ priceShow }}</div>
+</div>

@@ -20,15 +20,21 @@
 <body>
     <nav>
         <h1 style="margin: 20px; padding-top: 20px; display:inline;">VanB</h1>
-        <button *ngIf="UserNowLogin.member_username != null" class="logout-button" (click)="logout()">ออกจากระบบ</button>
-        <div class="float-right"><h4 *ngIf="UserNowLogin.member_username != null" style="margin: 20px; padding-top: 20px; display:inline; color:whitesmoke">สวัสดี {{UserNowLogin.member_firstname}}</h4></div>
-        <div class="float-right" *ngIf="UserNowLogin.member_username == null"><h4 style="margin: 20px; padding-top: 20px; display:inline; color:whitesmoke"><a routerLinkActive="active" routerLink="/login-page">สมัครสมาชิก/เข้าสู่ระบบ</a></h4></div>
+        <button *ngIf="UserNowLogin.type != null" class="logout-button" (click)="logout()">ออกจากระบบ</button>
+        <div id="hello-bar" class="float-right"><h2 *ngIf="UserNowLogin.member_username != null && UserNowLogin.type == 'user'" style="margin: 20px; padding-top: 20px; display:inline; color:whitesmoke">สวัสดี {{UserNowLogin.member_firstname}}</h2></div>
+        <div id="hello-bar" class="float-right"><h2 *ngIf="UserNowLogin.admin_username != null && UserNowLogin.type == 'admin'" style="margin: 20px; padding-top: 20px; display:inline; color:whitesmoke">สวัสดี Admin</h2></div>
+        <div class="float-right" *ngIf="UserNowLogin.type == null"><h4 style="margin: 20px; padding-top: 20px; display:inline; color:whitesmoke"><a id="login-register" routerLinkActive="active" routerLink="/login-page">ลงชื่อเข้าใช้/สร้างบัญชี</a></h4></div>
+        <div *ngIf="router.url === '/signup-page'" id="active-register"></div>
         <br>
         <ul style="float:right">
-            <li><a routerLinkActive="active" routerLink="/homepage">หน้าแรก</a></li>
-            <li><a href="#news">วิธีจองและชำระเงิน</a></li>
-            <li><a href="#contact">ตรวจสอบการจอง</a></li>
-            <li><a href="#about">ติดต่อเรา</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'user' || UserNowLogin.type == null" routerLinkActive="active" routerLink="/homepage">หน้าแรก</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'admin'" routerLinkActive="active" routerLink="/member-page">สมาชิก</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'admin'" routerLinkActive="active" routerLink="/reservation-admin-page">การจอง</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'user' || UserNowLogin.type == null" routerLinkActive="active" routerLink="/help-page">วิธีจองและชำระเงิน</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'user' || UserNowLogin.type == null" routerLinkActive="active" routerLink="/reservation-member-page">ตรวจสอบการจอง</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'user' || UserNowLogin.type == null" routerLinkActive="active" routerLink="/contact-page">ติดต่อเรา</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'admin'" routerLinkActive="active" routerLink="/reservation-amount-page">จำนวนการจอง</a></li>
+            <li><a *ngIf="UserNowLogin.type == 'admin'" routerLinkActive="active" routerLink="/contact-list-page">การติดต่อ</a></li>
         </ul>
     </nav>
 

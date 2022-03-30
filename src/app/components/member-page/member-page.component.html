@@ -1,0 +1,19 @@
+<div class="table-list">
+    <h1 class="text-center">สมาชิก</h1>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th scope="col">ลำดับ</th>
+                <th scope="col">ชื่อ</th>
+                <th scope="col">หมายเลขโทรศัพท์</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let member of Allmembers; let i = index">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ member.member_firstname + " " +  member.member_lastname}}</td>
+                <td>{{ member.member_tel }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

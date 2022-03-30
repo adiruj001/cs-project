@@ -1,0 +1,33 @@
+
+<div class="table-list text-center">
+    <h1>ประวัติการจอง</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ลำดับ</th>
+                <th scope="col">สายรถตู้</th>
+                <th scope="col">จุดขึ้นรถ</th>
+                <th scope="col">จุดลงรถ</th>
+                <th scope="col">วันที่ขึ้นรถ</th>
+                <th scope="col">เวลาที่ขึ้นรถ</th>
+                <th scope="col">สถานะ</th>
+                <th  scope="col">ตัวเลือก</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of Reservations; let i = index">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ reservation.vanline }}</td>
+                <td>{{ reservation.pickup }}</td>
+                <td>{{ reservation.destination }}</td>
+                <td>{{ reservation.date }}</td>
+                <td>{{ reservation.time }}</td>
+                <td class="{{ textColer[i] }}">{{ reservation.status }}</td>
+                <td >
+                    <button *ngIf="reservation.status == 'รอยืนยันการชำระเงิน'" id="cancel-button" class="btn btn-sm btn-danger" (click)="cancel(reservation._id, i)">ยกเลิก</button>
+                    <button class="btn btn-sm btn-warning" routerLink="/contact-page">ติดต่อ/ร้องเรียน</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

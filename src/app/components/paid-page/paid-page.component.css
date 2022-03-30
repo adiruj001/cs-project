@@ -1,0 +1,95 @@
+h2 {
+    position: absolute;
+    font-size: 200%;
+    width: fit-content;
+    top: 163px;
+    left: 50px;
+}
+
+.paid-info {
+    position: absolute;
+    width: 600px;
+    height: 700px;
+    top: 205px;
+    left: 50px;
+}
+
+.submit-button {
+    position: relative;
+    display: inline;
+    border: none;
+    font-size: 150%;
+    background-color: #ff6700;
+    color: aliceblue;
+    top: 60px;
+    right: -850px;   
+}
+
+h3 {
+    position: relative;
+    width: fit-content;
+    font-size: 200%;
+    top: 45px;
+    left: 680px;
+}
+
+input#imageFile{
+    width: fit-content;
+    display: none;
+}
+
+label#file-name{
+    position: relative;
+    border: 2px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 530px;
+    top: 40px;
+    left: 600px;
+}
+
+img {
+    border: 5px #004e98;
+    border-style: solid;
+    position: relative;
+    width: 409.6px;
+    height: 640px;
+    top: 50px;
+    left: 683px;
+}
+
+.input-file {
+    position: relative;
+    font-size: 100%;
+    color: white;
+    background-color: #004e98;
+    border: 2px solid black;
+    padding: 10px 10px;
+    top: 40px;
+    left: 1220px;
+}
+
+.input-file:hover {
+    background-color: #3A6EA5;
+    border-color: #ff6700;
+    cursor: pointer;
+}
+
+.price {
+    font-size: xx-large;
+    color: #ff6700;
+    position: relative;
+    margin-top: -45px;
+    top: 80px;
+    right: -65px;
+}
+
+#pay-image {
+    border: 10px #ff6700;
+    border-style: solid;
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
+    top: 0px;
+    left: 0px;
+}
