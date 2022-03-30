@@ -25,7 +25,7 @@ export class ContactPageComponent implements OnInit {
       contact_member_id: localStorage.getItem("userCurrentlyLogin"),
       contact_member_name: localStorage.getItem("passenger"),
       contact_member_email: [''],
-      contact_member_tel: Number(localStorage.getItem("member_tel")),
+      contact_member_tel: localStorage.getItem("member_tel"),
       contact_massage: ['']
     })
    }

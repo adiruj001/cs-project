@@ -12,7 +12,7 @@ let Contact = new Schema({
         type: String
     },
     contact_member_tel: {
-        type: Number
+        type: String
     },
     contact_massage: {
         type: String

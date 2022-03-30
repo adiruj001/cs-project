@@ -40,7 +40,7 @@ export class Contact {
   contact_member_id!: String;
   contact_member_name!: String;
   contact_member_email!: String;
-  contact_member_tel!: Number;
+  contact_member_tel!: String;
   contact_massage!: String;
 }
 
